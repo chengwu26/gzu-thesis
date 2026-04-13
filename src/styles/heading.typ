@@ -6,13 +6,18 @@
 
 #let heading-style(body) = {
   set heading(numbering: numbly("第{1:一}章", "{1}.{2}", "{1}.{2}.{3}", default: none))
-  show heading: it => par({
-    if it.numbering != none {
-      counter(heading).display(it.numbering)
-      if it.level == 1 { h(0.25em, weak: true) }
-    }
-    it.body
-  })
+  show heading: it => block(
+    spacing: auto,
+    sticky: true,
+    {
+      h(2 * zh(-4))
+      if it.numbering != none {
+        counter(heading).display(it.numbering)
+        if it.level == 1 { h(0.25em, weak: true) }
+      }
+      it.body
+    },
+  )
   show heading: set text(font: fonts.sans)
   show heading.where(level: 1): align.with(center)
   show heading.where(level: 1): set text(size: zh(-3))

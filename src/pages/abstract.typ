@@ -4,12 +4,14 @@
 
 
 #let _list-keywords(header, keywords, sep) = {
-  set par(first-line-indent: 0em)
   show heading: set text(weight: "regular")
-  show heading: box
-
-  heading(header, numbering: none)
-  box(sep + keywords)
+  show heading: it => box(it.body)
+  linebreak()
+  context {
+    place(dy: -2.5pt, heading(header, numbering: none))
+    let size = measure(heading(header, numbering: none))
+    par(first-line-indent: size.width, sep + keywords)
+  }
 }
 
 #let abstract(zh, en) = {
