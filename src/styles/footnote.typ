@@ -9,6 +9,7 @@
     set text(font: fonts.serif, size: zh(5))
     h(it.indent)
     numbering(it.note.numbering, ..counter(footnote).at(it.note.location()))
+    h(0.25em, weak: true)
     it.note.body
   }
   body
