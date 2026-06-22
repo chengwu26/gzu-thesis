@@ -15,7 +15,7 @@
   title-zh: [基于 Typst 的贵州大学本科生毕业论文（设计）模板],
   title-en: [Guizhou University Undergraduate Graduation Thesis (Design) Template Based on Typst],
   author: [姓名],
-  college: [学院名称],
+  college: [#h(1em)学院名称#h(1em)],
   major: [专业名称],
   class: [班级],
   id: [学号],
