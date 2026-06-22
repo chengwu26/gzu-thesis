@@ -14,13 +14,12 @@
   }
 }
 
-#let abstract(zh, en) = {
+#let abstract(zh, en, title-en) = {
+  show title: set align(center)
+  show title: set text(font: fonts.sans, zh-size(-2))
+
   // 中文摘要页
-  show title: it => {
-    set text(font: fonts.sans, zh-size(-2))
-    // 使用段落显示标题可让标题保持与正文的行距一致
-    align(center, par(if it.body == auto { document.title } else { it.body }))
-  }
+  v(1em)
   title()
   heading(numbering: none)[摘要]
   zh.abstract
@@ -28,7 +27,9 @@
   pagebreak(weak: true)
 
   // 英文摘要页
+  v(1em)
   set text(lang: "en", region: "us")
+  title(title-en)
   heading(numbering: none)[Abstract]
   en.abstract
   _list-keywords([Keywords], en.keywords.join([, ]), [: ])

@@ -29,9 +29,12 @@
 /// 模板入口函数。
 /// -> content
 #let gzu-thesis(
-  /// 论文题目
+  /// 论文题目（中文）
   /// -> str | content
-  title: [],
+  title-zh: [],
+  /// 论文题目（英文）
+  /// -> str | content
+  title-en: [],
   /// 封面和签名日期。省略时默认为当前日期。
   /// -> content | none
   date: datetime.today(),
@@ -84,7 +87,7 @@
 ) = {
   // 设置 PDF 元数据
   set document(
-    title: title,
+    title: title-zh,
     author: _to-string(author),
     keywords: abstract-zh.keywords,
   )
@@ -134,7 +137,7 @@
   )
   outline(depth: 3, title: "目录")
   pagebreak(weak: true)
-  abstract(abstract-zh, abstract-en)
+  abstract(abstract-zh, abstract-en, title-en)
 
   // 从正文开始一级标题自动分页
   show heading: it => if it.level == 1 { pagebreak(weak: true) } + it
