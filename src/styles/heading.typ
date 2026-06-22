@@ -10,10 +10,10 @@
     spacing: auto,
     sticky: true,
     {
-      h(2 * zh(-4))
       if it.numbering != none {
+        if it.level != 1 { h(2 * zh(-4)) }
         counter(heading).display(it.numbering)
-        if it.level == 1 { h(0.25em, weak: true) }
+        h(0.25em, weak: true)
       }
       it.body
     },
