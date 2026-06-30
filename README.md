@@ -6,6 +6,8 @@ This is a Typst template for undergraduate thesis (design) at Guizhou University
 [《贵州大学毕业论文（设计）管理办法（试行）》（2025 年 4 月）](assets/贵州大学毕业论文（设计）管理办法（试行）.pdf)
 制作。
 
+> 由于本人已毕业，若后续贵州大学调整了格式，需要大家提供最新格式的要求，亦或直接向本仓库贡献代码。
+
 ## 使用方法
 可在官方网页端在线使用，只需在仪表板上点击 “Start from template”，
 然后搜索 gzu-thesis-unofficial。
